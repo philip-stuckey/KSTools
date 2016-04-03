@@ -1,0 +1,13 @@
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\KSValidator.exe.config
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\KSValidator.exe
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\KSValidator.pdb
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\KSValidator.exe
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\KSValidator.pdb
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\KSValidator.exe.CodeAnalysisLog.xml
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\KSValidator.exe.lastcodeanalysissucceeded
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\KSValidator\ConsoleApplication1\bin\Debug\KSValidator.exe.config
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\KSValidator\ConsoleApplication1\obj\Debug\KSValidator.exe
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\KSValidator\ConsoleApplication1\obj\Debug\KSValidator.pdb
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\KSValidator\ConsoleApplication1\bin\Debug\KSValidator.exe
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\KSValidator\ConsoleApplication1\bin\Debug\KSValidator.pdb
+C:\Users\Philip_Stuckey\Documents\Visual Studio 2013\Projects\KSValidator\ConsoleApplication1\obj\Debug\KSValidator.csprojResolveAssemblyReference.cache
