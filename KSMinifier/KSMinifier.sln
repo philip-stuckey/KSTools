@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSMinifier", "KSMinifier\KSMinifier.csproj", "{5773C1E5-2245-40E8-B569-6983E1920E4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kOS.Safe", "..\..\KOS\src\kOS.Safe\kOS.Safe.csproj", "{590FFDA8-7B44-4BC3-A12A-5FFE2BB7D8FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Shell|Any CPU = Shell|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5773C1E5-2245-40E8-B569-6983E1920E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5773C1E5-2245-40E8-B569-6983E1920E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5773C1E5-2245-40E8-B569-6983E1920E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5773C1E5-2245-40E8-B569-6983E1920E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5773C1E5-2245-40E8-B569-6983E1920E4F}.Shell|Any CPU.ActiveCfg = Release|Any CPU
+		{5773C1E5-2245-40E8-B569-6983E1920E4F}.Shell|Any CPU.Build.0 = Release|Any CPU
+		{590FFDA8-7B44-4BC3-A12A-5FFE2BB7D8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{590FFDA8-7B44-4BC3-A12A-5FFE2BB7D8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{590FFDA8-7B44-4BC3-A12A-5FFE2BB7D8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{590FFDA8-7B44-4BC3-A12A-5FFE2BB7D8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{590FFDA8-7B44-4BC3-A12A-5FFE2BB7D8FD}.Shell|Any CPU.ActiveCfg = Shell|Any CPU
+		{590FFDA8-7B44-4BC3-A12A-5FFE2BB7D8FD}.Shell|Any CPU.Build.0 = Shell|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

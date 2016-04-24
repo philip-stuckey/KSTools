@@ -6,10 +6,11 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.IO;
 
-using kOS.Safe.Compilation.KS;
+
 
 using NDesk.Options;
-/// Thanks to 
+
+
 
 
 
@@ -25,6 +26,7 @@ namespace KSValidator
             bool helpOpt = false;
             var p = new OptionSet()
             {
+                
                 {"h|help", "show the help message",v=> helpOpt = (v!=null) },
                 {"f|file=", "the kerboscript source {file} to validate", f=>{code = File.ReadAllText(f);} },
                 {"r|rawCode=","raw kerboscript to be validated, must be in parenthesizes {\"...\"}, all internal parenthesies must be escaped", v=>code = v},
@@ -43,7 +45,7 @@ namespace KSValidator
             
 
             if (helpOpt) showHelp(p);
-            else PrintErrors(code);
+            else Validator.PrintErrors(code);
 
             
             // Keep the console window open in debug mode.
@@ -60,23 +62,7 @@ namespace KSValidator
         }
         
 
-        static void PrintErrors(String code)
-        {
-
-            var v = listErrors(code);
-            foreach(var e in v)
-                Console.WriteLine("Error file {0} (line {1}, col {2}) :  {3}", e.File, e.Line, e.Column, e.Message );
-            Console.WriteLine("code contains {0} Errors.", v.Count());
-        }
-        
-        static List<ParseError> listErrors(String code)
-        {
-
-           Parser p = (new Parser(new Scanner()));
-           return p.Parse(code).Errors;
-                        
-        }
-
+       
         static void showHelp(OptionSet p)
         {
             Console.WriteLine("A simple out of game validator for the KerboScript Language");
