@@ -10,20 +10,24 @@ namespace KSValidator
 {
     public class Validator
     {
-        public static void PrintErrors(String code)
+        public static void PrintErrors(String code, string name)
         {
-
-            var v = listErrors(code);
+            var v = listErrors(code, name);
             foreach (var e in v)
-                Console.WriteLine("Error file {0} (line {1}, col {2}) :  {3}", e.File, e.Line, e.Column, e.Message);
-            Console.WriteLine("code contains {0} Errors.", v.Count());
+                Console.WriteLine("Error code {0} (line {1}, col {2}) : {3}", e.Code, e.Line, e.Column, e.Message);
+            Console.WriteLine("{0} Errors.", v.Count());
         }
 
         public static List<ParseError> listErrors(String code)
         {
+            return listErrors(code, "");
+        }
+
+        public static List<ParseError> listErrors(String code, string name)
+        {
 
             Parser p = (new Parser(new Scanner()));
-            return p.Parse(code).Errors;
+            return p.Parse(code,name).Errors;
 
         }
     }

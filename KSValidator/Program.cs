@@ -7,71 +7,56 @@ using System.Threading.Tasks;
 using System.IO;
 
 
+using CommandLine;
 
-using NDesk.Options;
-
-
-
-
+//using NDesk.Options;
 
 namespace KSValidator
 {
     class Program
     {
-        
+
         static void Main(string[] args)
         {
+           
+           var opt = getCommandLineArgs(args);
 
-            String code = "";
-            bool helpOpt = false;
-            var p = new OptionSet()
+            if(opt.help)
             {
-                
-                {"h|help", "show the help message",v=> helpOpt = (v!=null) },
-                {"f|file=", "the kerboscript source {file} to validate", f=>{code = File.ReadAllText(f);} },
-                {"r|rawCode=","raw kerboscript to be validated, must be in parenthesizes {\"...\"}, all internal parenthesies must be escaped", v=>code = v},
-                
-            };
+                opt.showHelp();
+                exit(0);
+            }//*/
 
-            try
-            {
-                p.Parse(args);
-            }
-            catch(FileNotFoundException f)
-            {
-                Console.Error.WriteLine("File not found: {0}\n exit code 1", f.FileName);
-                exit(1);
-            }
-            
+           foreach(inputSource input in opt.getInputs())
+           {
+               Console.WriteLine("input {0}", input.getName);
+               Console.WriteLine("located at {0}", input.getPath);
+               Validator.PrintErrors(input.getCode, input.getName);
+               Console.WriteLine("\n");
+           }
 
-            if (helpOpt) showHelp(p);
-            else Validator.PrintErrors(code);
-
-            
             // Keep the console window open in debug mode.
             exit(0);
         }
 
+        static options getCommandLineArgs(string[] args)
+        {
+            Parser p = new Parser(settings => { settings.HelpWriter = null; settings.CaseSensitive = false; });
+            var opt = new options();
+            var result = p.ParseArguments(args, opt);
+            return opt;
+        }
+
         static void exit(Int32 c)
         {
-            #if DEBUG
+#if DEBUG
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
-            #endif
+#endif
             Environment.Exit(c);
-        }
-        
-
-       
-        static void showHelp(OptionSet p)
-        {
-            Console.WriteLine("A simple out of game validator for the KerboScript Language");
-            p.WriteOptionDescriptions(Console.Out);
-        }
-        
-   
-
-        
-
+        }       
     }
+    
+       
+
 }
