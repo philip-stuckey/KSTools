@@ -13,7 +13,7 @@ namespace KSValidator
         protected string code;
         protected string path= "nowhere";
         public string getName { get { return name; } }
-        public string getCode { get { return code; } }
+        public virtual string getCode { get { return code; } }
         public string getPath { get { return path; } }
 
     }
@@ -44,10 +44,22 @@ namespace KSValidator
     }
     class fromSTDIN : inputSource
     {
+        
         public fromSTDIN()
         {
             this.name = "STDIN";
+                
         }
 
+        public override string getCode { get { return codeFromSTDIN(); } } 
+        private string codeFromSTDIN()
+        {
+            string code = "";
+            for(string line = Console.ReadLine(); line != null; line = Console.ReadLine())
+            {
+                code += line;
+            }
+            return code;
+        }
     }
 }

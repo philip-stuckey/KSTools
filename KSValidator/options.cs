@@ -15,10 +15,10 @@ namespace KSValidator
         [OptionArray('f', "inputFiles", MetaValue = "files", HelpText = "a list of input files to validate")]
         public String[] inputFiles { get; set; }
 
-        [Option(HelpText = "option  to enter code through standard input")]
+        [Option("useSTDIN",HelpText = "option  to enter code through standard input")]
         public bool useStdIn { get; set; }
 
-        [Option(HelpText = "enter raw code through the command line (Should be in quotes)", MetaValue = "\"...\"")]
+        [Option("rawCode", HelpText = "enter raw code through the command line (Should be in quotes with all internal quotes properly escaped)", MetaValue = "\"...\"")]
         public string rawCode { get; set; }
 
         [Option('h', "Help", HelpText = "shows the help text")]
@@ -31,7 +31,7 @@ namespace KSValidator
         {
 
             HelpText ht = new HelpText(
-                "KSValidator: A simple out of game validator for the KerboScript Language",
+                "KSValidator: A simple out of game validator for the KerboScript Language\ncommand line switches are NOT case sensitive",
                 "Free to share, distribute, and modify", this);
             Console.WriteLine(ht);
 
@@ -43,6 +43,9 @@ namespace KSValidator
             if (rawCode != null)
             {
                 inputs.Add(new fromArgs(rawCode));
+#if DEBUG
+                Console.WriteLine("got arguments");
+#endif
             }
             if (useStdIn)
             {

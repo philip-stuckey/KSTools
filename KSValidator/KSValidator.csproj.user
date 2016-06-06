@@ -12,7 +12,7 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>--inputFiles test1.ks --rawCode "lock steering to up."</StartArguments>
+    <StartArguments>--usestdin</StartArguments>
     <StartWorkingDirectory>C:\Users\Philip_Stuckey\Documents\GitHub\KSTools\KSValidator\tests\</StartWorkingDirectory>
   </PropertyGroup>
 </Project>
