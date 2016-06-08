@@ -27,12 +27,12 @@ namespace KSValidator
         [Option("longFileNames", HelpText = "use full path when printing a file name")]
         public bool longNames { get; set; }
 
-        public void showHelp()
+        public static void showHelp()
         {
 
             HelpText ht = new HelpText(
                 "KSValidator: A simple out of game validator for the KerboScript Language\ncommand line switches are NOT case sensitive",
-                "Free to share, distribute, and modify", this);
+                "Free to share, distribute, and modify", new options());
             Console.WriteLine(ht);
 
         }
@@ -57,10 +57,6 @@ namespace KSValidator
             {
                 inputs.Add(new fromFile(fileName));
             }
-#if DEBUG
-            else
-                Console.WriteLine("no input files");
-#endif
             return inputs;
         }
 

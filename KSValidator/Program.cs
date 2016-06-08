@@ -20,12 +20,15 @@ namespace KSValidator
         {
            
            var opt = getCommandLineArgs(args);
-
-            if(opt.help)
-            {
-                opt.showHelp();
-                exit(0);
-            }//*/
+           if(opt == null || opt.help)
+           {
+               if(opt ==null)
+               {
+                   Console.Error.WriteLine("Invalid Command line Arguments");
+               }
+               options.showHelp();
+               exit(0);
+           }//*/
 
            foreach(inputSource input in opt.getInputs())
            {
@@ -43,8 +46,8 @@ namespace KSValidator
         {
             Parser p = new Parser(settings => { settings.HelpWriter = null; settings.CaseSensitive = false; });
             var opt = new options();
-            var result = p.ParseArguments(args, opt);
-            return opt;
+            return  (p.ParseArguments(args, opt))? opt : null;
+            
         }
 
         static void exit(Int32 c)
